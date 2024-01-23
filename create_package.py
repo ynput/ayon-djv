@@ -281,9 +281,6 @@ def main(
     if not output_dir:
         output_dir = os.path.join(current_dir, "package")
 
-    downloads_dir = Path(os.path.join(current_dir, "downloads"))
-    downloads_dir.mkdir(exist_ok=True)
-
     version_filepath = os.path.join(current_dir, "version.py")
     version_content = {}
     with open(version_filepath, "r") as stream:
