@@ -1,9 +1,9 @@
 import os
 import time
-import subprocess
 
 import clique
 
+from openpype.lib import run_detached_process
 from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
 from openpype.pipeline import load
 
@@ -68,7 +68,7 @@ class OpenInDJV(load.LoaderPlugin):
 
         try:
             # Run DJV with these commands
-            _process = subprocess.Popen(cmd)
+            run_detached_process(cmd)
             # Keep process in memory for some time
             time.sleep(0.1)
 

@@ -1,12 +1,12 @@
 import os
 import time
-import subprocess
 from operator import itemgetter
 
 from ayon_ftrack.common import LocalAction
 
 from ayon_djv.utils import DJVExecutableCache, get_djv_icon_url
 
+from openpype.lib import run_detached_process
 from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
 
 
@@ -165,9 +165,7 @@ class DJVViewAction(LocalAction):
 
         try:
             # Run DJV with these commands
-            _process = subprocess.Popen(cmd)
-            # Keep process in memory for some time
-            time.sleep(0.1)
+            run_detached_process(cmd)
 
         except FileNotFoundError:
             return {
