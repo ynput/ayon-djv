@@ -8,6 +8,8 @@ from ayon_ftrack.lib import statics_icon
 
 from ayon_djv.utils import DJVExecutableCache
 
+from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
+
 
 class DJVViewAction(LocalAction):
     """Launch DJVView action."""
@@ -18,17 +20,11 @@ class DJVViewAction(LocalAction):
 
     type = "Application"
 
-    allowed_types = [
-        "cin", "dpx", "avi", "dv", "gif", "flv", "mkv", "mov", "mpg", "mpeg",
-        "mp4", "m4v", "mxf", "iff", "z", "ifl", "jpeg", "jpg", "jfif", "lut",
-        "1dl", "exr", "pic", "png", "ppm", "pnm", "pgm", "pbm", "rla", "rpf",
-        "sgi", "rgba", "rgb", "bw", "tga", "tiff", "tif", "img"
-    ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self._executable_cache = DJVExecutableCache()
+    allowed_types = {
+        ext.lstrip(".")
+        for ext in set(IMAGE_EXTENSIONS) | set(VIDEO_EXTENSIONS)
+    }
+    _executable_cache = DJVExecutableCache()
 
     def discover(self, session, entities, event):
         """Return available actions based on *event*. """
