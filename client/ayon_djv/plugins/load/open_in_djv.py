@@ -58,7 +58,7 @@ class OpenInDJV(load.LoaderPlugin):
 
         self.log.info("Opening : {}".format(filepath))
 
-        executable = self.cls.get_djv_path()
+        executable = self.get_djv_path()
         cmd = [
             # DJV path
             str(executable),
