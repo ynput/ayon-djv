@@ -8,7 +8,7 @@ from .version import __version__
 
 class FtrackAddon(BaseServerAddon):
     name = "djv"
-    title = "DJV viewer"
+    title = "DJV"
     version = __version__
     settings_model: Type[DJVSettings] = DJVSettings
 
