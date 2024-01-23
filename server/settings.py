@@ -20,9 +20,11 @@ DEFAULT_VALUES = {
     "enabled": True,
     "djv_path": {
         "windows": [
-            "C:\\Program Files\\DJV2\\bin\\djv.exe"
+            "C:\\Program Files\\DJV2\\bin\\djv.exe",
         ],
         "linux": [],
-        "darwin": []
+        "darwin": [
+            "/Applications/DJV2.app/Contents/MacOS/DJV2",
+        ]
     }
 }
