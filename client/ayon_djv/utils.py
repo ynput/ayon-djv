@@ -18,8 +18,8 @@ def get_djv_icon_url(server_url=None):
         str: URL where DJV icon is located.
     """
 
-    server_url = server_url or ayon_api.get_rest_url()
-    return "{}/{}/{}/private/djv.png".format(
+    server_url = server_url or ayon_api.get_base_url()
+    return "{}/addons/{}/{}/public/djv.png".format(
         server_url, ADDON_NAME, __version__
     )
 
