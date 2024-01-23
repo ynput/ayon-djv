@@ -18,5 +18,11 @@ class DJVSettings(BaseSettingsModel):
 
 DEFAULT_VALUES = {
     "enabled": True,
-    "djv_path": {}
+    "djv_path": {
+        "windows": [
+            "C:\\Program Files\\DJV2\\bin\\djv.exe"
+        ],
+        "linux": [],
+        "darwin": []
+    }
 }
