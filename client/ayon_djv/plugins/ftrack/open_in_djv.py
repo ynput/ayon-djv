@@ -4,9 +4,8 @@ import subprocess
 from operator import itemgetter
 
 from ayon_ftrack.common import LocalAction
-from ayon_ftrack.lib import statics_icon
 
-from ayon_djv.utils import DJVExecutableCache
+from ayon_djv.utils import DJVExecutableCache, get_djv_icon_url
 
 from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
 
@@ -16,7 +15,7 @@ class DJVViewAction(LocalAction):
     identifier = "djvview-launch-action"
     label = "DJV View"
     description = "DJV View Launcher"
-    icon = statics_icon("app_icons", "djvView.png")
+    icon = get_djv_icon_url()
 
     type = "Application"
 

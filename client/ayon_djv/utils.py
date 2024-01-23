@@ -8,6 +8,22 @@ from .version import __version__
 from .constants import ADDON_NAME
 
 
+def get_djv_icon_url(server_url=None):
+    """Get URL to DJV icon.
+
+    Args:
+        server_url (Optional[str]): AYON server URL.
+
+    Returns:
+        str: URL where DJV icon is located.
+    """
+
+    server_url = server_url or ayon_api.get_rest_url()
+    return "{}/{}/{}/private/djv.png".format(
+        server_url, ADDON_NAME, __version__
+    )
+
+
 def get_djv_paths_from_settings(addon_settings=None):
     """
 
