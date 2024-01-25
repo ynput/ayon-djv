@@ -9,7 +9,7 @@ class DJVSettings(BaseSettingsModel):
     """DJV addon settings."""
 
     enabled: bool = SettingsField(True)
-    djv_path: MultiplatformPathListModel = MultiplatformPathListModel(
+    djv_path: MultiplatformPathListModel = SettingsField(
         title="DJV paths",
         default_factory=MultiplatformPathListModel,
         scope=["studio"],
