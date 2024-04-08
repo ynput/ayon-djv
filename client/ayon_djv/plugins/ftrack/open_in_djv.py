@@ -1,13 +1,13 @@
 import os
-import time
+
 from operator import itemgetter
 
 from ayon_ftrack.common import LocalAction
 
 from ayon_djv.utils import DJVExecutableCache, get_djv_icon_url
 
-from openpype.lib import run_detached_process
-from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
+from ayon_core.lib import run_detached_process
+from ayon_core.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
 
 
 class DJVViewAction(LocalAction):
