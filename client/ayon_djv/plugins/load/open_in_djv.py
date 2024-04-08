@@ -3,9 +3,9 @@ import time
 
 import clique
 
-from openpype.lib import run_detached_process
-from openpype.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
-from openpype.pipeline import load
+from ayon_core.lib import run_detached_process
+from ayon_core.lib.transcoding import IMAGE_EXTENSIONS, VIDEO_EXTENSIONS
+from ayon_core.pipeline import load
 
 from ayon_djv.utils import DJVExecutableCache
 
@@ -14,7 +14,7 @@ class OpenInDJV(load.LoaderPlugin):
     """Open Image Sequence with system default"""
 
     _executable_cache = DJVExecutableCache()
-    families = ["*"]
+    product_types = ["*"]
     representations = ["*"]
     extensions = {
         ext.lstrip(".")

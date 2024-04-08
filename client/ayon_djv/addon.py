@@ -1,5 +1,5 @@
 import os
-from openpype.modules import AYONAddon, IPluginPaths
+from ayon_core.addon import AYONAddon, IPluginPaths
 
 from .version import __version__
 from .constants import ADDON_NAME, DJV_ROOT
