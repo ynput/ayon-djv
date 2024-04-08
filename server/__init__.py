@@ -3,13 +3,9 @@ from typing import Type
 from ayon_server.addons import BaseServerAddon, AddonLibrary
 
 from .settings import DJVSettings, DEFAULT_VALUES
-from .version import __version__
 
 
 class FtrackAddon(BaseServerAddon):
-    name = "djv"
-    title = "DJV"
-    version = __version__
     settings_model: Type[DJVSettings] = DJVSettings
 
     async def get_default_settings(self):
