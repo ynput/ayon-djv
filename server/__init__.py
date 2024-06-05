@@ -5,7 +5,7 @@ from ayon_server.addons import BaseServerAddon, AddonLibrary
 from .settings import DJVSettings, DEFAULT_VALUES
 
 
-class FtrackAddon(BaseServerAddon):
+class DJVAddon(BaseServerAddon):
     settings_model: Type[DJVSettings] = DJVSettings
 
     async def get_default_settings(self):
