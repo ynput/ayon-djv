@@ -22,7 +22,6 @@ client side code zipped in `private` subfolder.
 import os
 import sys
 import re
-import json
 import shutil
 import argparse
 import platform
