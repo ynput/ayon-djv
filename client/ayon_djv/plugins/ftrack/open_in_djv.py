@@ -143,7 +143,7 @@ class DJVViewAction(LocalAction):
         """Callback method for DJVView action."""
 
         # Launching application
-        event_values = event["data"].get("value")
+        event_values = event["data"].get("values")
         if not event_values:
             return
 
@@ -162,6 +162,7 @@ class DJVViewAction(LocalAction):
             # PATH TO COMPONENT
             filpath
         ]
+        self.log.info(f"Opening: {cmd}")
 
         try:
             # Run DJV with these commands
