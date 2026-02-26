@@ -14,8 +14,9 @@ class OpenInDJV(load.LoaderPlugin):
     """Open Image Sequence with system default"""
 
     _executable_cache = DJVExecutableCache()
-    product_types = ["*"]
-    representations = ["*"]
+    product_base_types = {"*"}
+    product_types = product_base_types
+    representations = {"*"}
     extensions = {
         ext.lstrip(".")
         for ext in set(IMAGE_EXTENSIONS) | set(VIDEO_EXTENSIONS)
