@@ -11,9 +11,6 @@ class DJVAddon(AYONAddon, IPluginPaths):
     name = ADDON_NAME
     version = __version__
 
-    def get_plugin_paths(self):
-        return {}
-
     def get_loader_action_plugin_paths(self, host_name=None):
         return [
             os.path.join(DJV_ROOT, "plugins", "loader"),
