@@ -12,13 +12,11 @@ class DJVAddon(AYONAddon, IPluginPaths):
     version = __version__
 
     def get_plugin_paths(self):
-        return {
-            "load": self.get_load_plugin_paths()
-        }
+        return {}
 
-    def get_load_plugin_paths(self, host_name=None):
+    def get_loader_action_plugin_paths(self, host_name=None):
         return [
-            os.path.join(DJV_ROOT, "plugins", "load"),
+            os.path.join(DJV_ROOT, "plugins", "loader"),
         ]
 
     def get_ftrack_event_handler_paths(self):
