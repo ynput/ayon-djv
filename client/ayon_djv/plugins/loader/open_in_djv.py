@@ -23,10 +23,7 @@ class OpenInDJV(LoaderActionPlugin):
     identifier = "djv.open-in-djv"
 
     _executable_cache = DJVExecutableCache()
-    extensions = {
-        ext.lstrip(".")
-        for ext in set(IMAGE_EXTENSIONS) | set(VIDEO_EXTENSIONS)
-    }
+    extensions = set(IMAGE_EXTENSIONS) | set(VIDEO_EXTENSIONS)
 
     @classmethod
     def get_djv_path(cls):
@@ -70,7 +67,7 @@ class OpenInDJV(LoaderActionPlugin):
                 if ext not in self.extensions:
                     continue
                 name = repre["name"]
-                repre_ids_by_name[name].append(repre)
+                repre_ids_by_name[name].add(repre["id"])
 
         if not repre_ids_by_name:
             return []
@@ -78,7 +75,7 @@ class OpenInDJV(LoaderActionPlugin):
         return [
             LoaderActionItem(
                 label=repre_name,
-                group_label="Open file",
+                group_label="Open in DJV",
                 order=30,
                 data={"representation_id": next(iter(repre_ids))},
                 icon={
