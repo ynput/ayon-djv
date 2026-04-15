@@ -1,5 +1,5 @@
 name = "djv"
-version = "1.2.0"
+version = "1.2.0+dev"
 title = "DJV"
 client_dir = "ayon_djv"
 
